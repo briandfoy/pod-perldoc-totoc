@@ -8,6 +8,7 @@ Pod-.*
 MANIFEST\.
 blib/
 CVS
+.svn
 pm_to_blib
 iterate-new.t
 Makefile.old

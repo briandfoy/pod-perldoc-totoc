@@ -9,7 +9,7 @@ use vars qw( $VERSION );
 
 use Pod::TOC;
 
-$VERSION = '0.10_01';
+$VERSION = '1.01';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }
@@ -19,7 +19,6 @@ sub parse_from_file
 	{
 	my( $self, $file, $output_fh ) = @_; # Pod::Perldoc object
 	
-	print STDERR "Output filehandle is $output_fh\n";
 	my $parser = Pod::TOC->new();
 
 	$parser->output_fh( $output_fh );
@@ -33,26 +32,36 @@ Pod::Perldoc::ToToc - This is the description
 
 =head1 SYNOPSIS
 
-	use Pod::Perldoc::ToToc;
+Use this module with C<perldoc>'s C<-M> switch.
+
+	% perldoc -MPod::Perldoc::ToToc Module::Name
 
 =head1 DESCRIPTION
 
-=cut
+This module uses the C<Pod::Perldoc> module to extract a table of 
+contents from a pod file.
 
+=head1 METHODS
 
+=over 4
 
-=head1 TO DO
+=item parse_from_file( FILENAME, OUTPUT_FH )
 
+Parse the file named in C<FILENAME> using C<Pod::TOC> and send the
+results to the output filehandle C<OUTPUT_FH>.
+
+=back
 
 =head1 SEE ALSO
 
+L<Pod::Perldoc>
 
 =head1 SOURCE AVAILABILITY
 
-This source is part of a SourceForge project which always has the
-latest sources in CVS, as well as all of the previous releases.
+This source is part of a Google Code project which always has the
+latest sources in SVN.
 
-	http://sourceforge.net/projects/brian-d-foy/
+	http://code.google.com/p/brian-d-foy/source
 
 If, for some reason, I disappear from the world, one of the other
 members of the project can shepherd this module appropriately.

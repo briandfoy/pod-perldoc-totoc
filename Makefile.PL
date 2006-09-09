@@ -8,7 +8,9 @@ WriteMakefile(
 	'VERSION_FROM' => 'lib/ToToc.pm',
 
 	'PREREQ_PM'    => { 
-		'Test::More' => '0',
+		'Test::More'   => '0',
+		'Pod::Perldoc' => '0',
+		'Pod::Simple'  => '0',
 		},
 
 	'PM'           => {
