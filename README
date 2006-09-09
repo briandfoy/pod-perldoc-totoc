@@ -15,12 +15,11 @@ the file, you can read it with perldoc.
 If you want to read it before you install it, you can use
 perldoc directly on the module file.
 
-	perldoc  lib/ToToc.pm
+	perldoc lib/ToToc.pm
 	
-This module is also in CVS on SourceForge
+This module is also in CVS on Google Projects:
 
-	http://sourceforge.net/projects/brian-d-foy/
-
+	http://code.google.com/p/brian-d-foy/source
 
 Enjoy, 
 
