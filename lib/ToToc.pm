@@ -9,7 +9,7 @@ use vars qw( $VERSION );
 
 use Pod::TOC;
 
-$VERSION = '1.02';
+$VERSION = '1.03';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }
