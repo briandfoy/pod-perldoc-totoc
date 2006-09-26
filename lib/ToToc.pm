@@ -1,4 +1,4 @@
-# $Id$
+ # $Id$
 package Pod::Perldoc::ToToc;
 use strict;
 
@@ -9,7 +9,7 @@ use vars qw( $VERSION );
 
 use Pod::TOC;
 
-$VERSION = '1.03';
+$VERSION = '1.04';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }
@@ -28,7 +28,7 @@ sub parse_from_file
 	
 =head1 NAME
 
-Pod::Perldoc::ToToc - This is the description
+Pod::Perldoc::ToToc - Translate Pod to a Table of Contents
 
 =head1 SYNOPSIS
 
@@ -70,7 +70,7 @@ members of the project can shepherd this module appropriately.
 
 brian d foy, C<< <bdfoy@cpan.org> >>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
 Copyright (c) 2006, brian d foy, All Rights Reserved.
 
