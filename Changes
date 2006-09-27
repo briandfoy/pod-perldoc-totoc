@@ -1,5 +1,8 @@
 # $Id$
 
+1.05 - Wed Sep 27 13:54:07 CDT 2006 
+	* distro changes to zap Mac extended atrribute files
+	
 1.04 - Tue Sep 26 16:36:24 CDT 2006
 	* updated description in the docs
 	* no code changes

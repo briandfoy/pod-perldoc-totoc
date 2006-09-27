@@ -3,6 +3,9 @@ use ExtUtils::MakeMaker;
 
 eval "use Test::Manifest 1.14";
 
+# Stupid Mac extended attribute files
+unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
+
 WriteMakefile(
 	'NAME'	       => 'Pod::Perldoc::ToToc',
 	'VERSION_FROM' => 'lib/ToToc.pm',

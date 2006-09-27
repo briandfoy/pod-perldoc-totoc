@@ -7,7 +7,7 @@ use base qw( Pod::Simple );
 use subs qw();
 use vars qw( $VERSION );
 
-$VERSION = '1.04';
+$VERSION = '1.05';
 
 sub _handle_element
 	{
@@ -82,7 +82,7 @@ sub _set_flag
 
 =head1 NAME
 
-Pod::TOC - Extract a table of contents from a pod file
+Pod::TOC - Extract a table of contents from a Pod file
 
 =head1 SYNOPSIS
 
