@@ -9,7 +9,7 @@ use vars qw( $VERSION );
 
 use Pod::TOC;
 
-$VERSION = '1.05';
+$VERSION = '1.06';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }
@@ -72,7 +72,7 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2006, brian d foy, All Rights Reserved.
+Copyright (c) 2006-2007, brian d foy, All Rights Reserved.
 
 You may redistribute this under the same terms as Perl itself.
 
