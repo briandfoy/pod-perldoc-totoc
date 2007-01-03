@@ -21,8 +21,17 @@ sub _handle_element
 	$sub->( $self, $args ) if $sub;
 	}
 
-sub _handle_element_start  { &_handle_element }
-sub _handle_element_end    { &_handle_element }
+sub _handle_element_start  
+	{ 
+	my $self = shift;
+	$self->_handle_element( @_ ); 
+	}
+	
+sub _handle_element_end    
+	{ 
+	my $self = shift;
+	$self->_handle_element( @_ ); 
+	}
 
 sub _handle_text 
 	{	
