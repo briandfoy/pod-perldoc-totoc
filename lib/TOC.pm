@@ -7,7 +7,7 @@ use base qw( Pod::Simple );
 use subs qw();
 use vars qw( $VERSION );
 
-$VERSION = '1.05';
+$VERSION = '1.07';
 
 sub _handle_element
 	{
@@ -134,9 +134,10 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2006, brian d foy, All Rights Reserved.
+Copyright (c) 2006-2007 brian d foy.  All rights reserved.
 
-You may redistribute this under the same terms as Perl itself.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 

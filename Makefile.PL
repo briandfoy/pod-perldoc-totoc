@@ -9,6 +9,7 @@ unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
 WriteMakefile(
 	'NAME'	       => 'Pod::Perldoc::ToToc',
 	'VERSION_FROM' => 'lib/ToToc.pm',
+	'LICENSE'       => 'perl',
 
 	'PREREQ_PM'    => { 
 		'Test::More'   => '0',
