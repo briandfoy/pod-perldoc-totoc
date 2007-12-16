@@ -7,6 +7,9 @@ use base qw( Pod::Simple );
 use subs qw();
 use vars qw( $VERSION );
 
+use warnings; 
+no warnings;
+
 $VERSION = '1.07';
 
 sub _handle_element
