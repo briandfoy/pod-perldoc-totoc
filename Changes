@@ -1,5 +1,9 @@
 # $Id$
 
+1.08 - Sat Dec 15 18:32:43 2007
+	* updated for the move from CVS to SVN
+	* No need to upgrade
+
 1.05 - Wed Sep 27 13:54:07 CDT 2006 
 	* distro changes to zap Mac extended atrribute files
 	
