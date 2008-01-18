@@ -1,5 +1,9 @@
 # $Id$
 
+1.08 - Fri Jan 18 04:26:40 2008
+	* Distro cleanups. No big whoop.
+	* Requires 5.006 now.
+
 1.08 - Sat Dec 15 18:32:43 2007
 	* updated for the move from CVS to SVN
 	* No need to upgrade
