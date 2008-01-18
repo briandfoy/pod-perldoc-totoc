@@ -4,12 +4,12 @@
 	* updated for the move from CVS to SVN
 	* No need to upgrade
 
-1.05 - Wed Sep 27 13:54:07 CDT 2006 
+1.05 - Wed Sep 27 13:54:07 CDT 2006
 	* distro changes to zap Mac extended atrribute files
-	
+
 1.04 - Tue Sep 26 16:36:24 CDT 2006
 	* updated description in the docs
 	* no code changes
-	
+
 1.01 - Sat Sep  9 09:33:56 CDT 2006
 	* initial release

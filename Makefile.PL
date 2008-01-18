@@ -13,9 +13,9 @@ WriteMakefile(
 	'VERSION_FROM'  => 'lib/ToToc.pm',
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
-	'ABSTRACT'      => 'Turn one or more Pod files into a table of contents', 
+	'ABSTRACT'      => 'Turn one or more Pod files into a table of contents',
 
-	'PREREQ_PM'    => { 
+	'PREREQ_PM'    => {
 		'Test::More'   => '0',
 		'Pod::Perldoc' => '0',
 		'Pod::Simple'  => '0',
