@@ -8,7 +8,7 @@ use lib qw( t/lib );
 
 require "parse.pl";
 
-my $output = parse_it( 'output.pod' );
+my $output = parse_it( 'example.pod' );
 
 my $expected = <<"HERE";
 Chapter title
