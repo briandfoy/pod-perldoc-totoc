@@ -2,21 +2,13 @@
 
 use Test::More 'no_plan';
 
-use File::Spec;
+BEGIN {
+use lib qw( t/lib );
+}
 
-my $file = File::Spec->catfile( 't', 'example.pod' );
-ok( -e $file, "Test file exists" );
+require "parse.pl";
 
-use_ok( 'Pod::TOC' );
-
-my $output = '';
-open my( $fh ), ">", \$output;
-
-my $parser = Pod::TOC->new();
-isa_ok( $parser, 'Pod::TOC' );
-
-$parser->output_fh( $fh );
-$parser->parse_file( $file );
+my $output = parse_it( 'output.pod' );
 
 my $expected = <<"HERE";
 Chapter title
