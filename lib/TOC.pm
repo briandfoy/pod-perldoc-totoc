@@ -10,7 +10,31 @@ use vars qw( $VERSION );
 use warnings;
 no warnings;
 
-$VERSION = '1.08';
+$VERSION = '1.09';
+
+BEGIN {
+	my @Head_levels = 0 .. 4;
+	
+	my %flags = map { ( "head$_", $_ ) } @Head_levels;
+	
+	foreach my $directive ( keys %flags )
+		{
+		no strict 'refs';
+
+		*{"_start_$directive"} = sub { 
+			$_[0]->_set_flag( "_start_$directive" ); 
+			print { $_[0]->output_fh } "\t" x ( $_[0]->_get_flag - 1 ) 
+			};
+
+		*{"_end_$directive"}   = sub { 
+			$_[0]->_set_flag( "_end_$directive" ); 
+			print { $_[0]->output_fh } "\n" 
+			};
+		}
+	
+	sub _is_valid_tag { exists $flags{ $_[1] } }
+	sub _get_tag      {        $flags{ $_[1] } }
+	}
 
 sub _handle_element
 	{
@@ -40,29 +64,9 @@ sub _handle_text
 	{
 	return unless $_[0]->_get_flag;
 
-	print { $_[0]->output_fh }
-		"\t" x ( $_[0]->_get_flag - 1 ), $_[1], "\n";
+	print { $_[0]->output_fh } $_[1];
 	}
 
-
-{
-my @Head_levels = 0 .. 4;
-
-my %flags = map { ( "head$_", $_ ) } @Head_levels;
-
-foreach my $directive ( keys %flags )
-	{
-	no strict 'refs';
-	foreach my $prepend ( qw( start end ) )
-		{
-		my $name = "_${prepend}_$directive";
-		*{$name} = sub { $_[0]->_set_flag( $name ) };
-		}
-	}
-
-sub _is_valid_tag { exists $flags{ $_[1] } }
-sub _get_tag      {        $flags{ $_[1] } }
-}
 
 {
 my $Flag;
