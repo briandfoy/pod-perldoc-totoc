@@ -12,7 +12,7 @@ use Pod::TOC;
 use warnings;
 no warnings;
 
-$VERSION = '1.08';
+$VERSION = '1.09';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }
