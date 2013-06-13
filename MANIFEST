@@ -1,11 +1,13 @@
 Changes
 examples/placeholder.pl
-lib/TOC.pm
-lib/ToToc.pm
+lib/Pod/Perldoc/ToToc.pm
+lib/Pod/TOC.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
+MYMETA.json
+MYMETA.yml
 README
 t/example.t
 t/lib/parse.pl
@@ -13,7 +15,6 @@ t/load.t
 t/pod.t
 t/pod_coverage.t
 t/prereq.t
-t/rt/37979.t
 t/test_manifest
 t/test_pod/37979.pod
 t/test_pod/example.pod
