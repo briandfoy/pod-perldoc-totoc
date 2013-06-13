@@ -1,4 +1,7 @@
 
+1.10 - Wed Jun 12 22:19:15 2013
+	* Move everything into Git and update for Mastering Perl, 2e
+
 1.09 - Mon Jul 28 16:06:59 2008
 	* Fixing RT #37979, where a -> sequence in a head element 
 	messed up everything
