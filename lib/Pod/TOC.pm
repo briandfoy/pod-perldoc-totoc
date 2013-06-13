@@ -9,15 +9,14 @@ use vars qw( $VERSION );
 use warnings;
 no warnings;
 
-$VERSION = '1.09';
+our $VERSION = '1.10';
 
 BEGIN {
 	my @Head_levels = 0 .. 4;
 	
 	my %flags = map { ( "head$_", $_ ) } @Head_levels;
 	
-	foreach my $directive ( keys %flags )
-		{
+	foreach my $directive ( keys %flags ) {
 		no strict 'refs';
 
 		*{"_start_$directive"} = sub { 
@@ -35,8 +34,7 @@ BEGIN {
 	sub _get_tag      {        $flags{ $_[1] } }
 	}
 
-sub _handle_element
-	{
+sub _handle_element {
 	my( $self, $element, $args ) = @_;
 
 	my $caller_sub = ( caller(1) )[3];
@@ -47,20 +45,17 @@ sub _handle_element
 	$sub->( $self, $args ) if $sub;
 	}
 
-sub _handle_element_start
-	{
+sub _handle_element_start {
 	my $self = shift;
 	$self->_handle_element( @_ );
 	}
 
-sub _handle_element_end
-	{
+sub _handle_element_end {
 	my $self = shift;
 	$self->_handle_element( @_ );
 	}
 
-sub _handle_text
-	{
+sub _handle_text {
 	return unless $_[0]->_get_flag;
 
 	print { $_[0]->output_fh } $_[1];
@@ -72,8 +67,7 @@ my $Flag;
 
 sub _get_flag { $Flag }
 
-sub _set_flag
-    {
+sub _set_flag {
 	my( $self, $caller ) = @_;
 
 	return unless $caller;
@@ -136,11 +130,11 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2006-2008 brian d foy.  All rights reserved.
+Copyright (c) 2006-2013, brian d foy, All Rights Reserved.
 
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+You may redistribute this under the same terms as Perl itself.
 
 =cut
+
 
 1;

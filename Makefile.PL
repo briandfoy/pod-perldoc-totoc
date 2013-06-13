@@ -20,15 +20,5 @@ WriteMakefile(
 		'Pod::Simple'  => '0',
 		},
 
-	'PM'           => {
-		'lib/ToToc.pm'         => '$(INST_LIBDIR)/ToToc.pm',
-		'lib/TOC.pm'           => 'blib/lib/Pod/TOC.pm',
-		},
-
-	'MAN3PODS'     => {
-		'lib/ToToc.pm' => '$(INST_MAN3DIR)/Pod::Perldoc::ToToc.3',
-		'lib/TOC.pm'   => '$(INST_MAN3DIR)/Pod::TOC.3',
-		},
-
 	clean  => { FILES    => q|Pod-Perldoc-ToToc-*| },
 	);
