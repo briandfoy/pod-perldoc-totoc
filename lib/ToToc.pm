@@ -60,13 +60,9 @@ L<Pod::Perldoc>
 
 =head1 SOURCE AVAILABILITY
 
-This source is part of a Google Code project which always has the
-latest sources in SVN.
+This source is in Github:
 
-	http://code.google.com/p/brian-d-foy/source
-
-If, for some reason, I disappear from the world, one of the other
-members of the project can shepherd this module appropriately.
+	https://github.com/briandfoy/pod-perldoc-totoc
 
 =head1 AUTHOR
 
