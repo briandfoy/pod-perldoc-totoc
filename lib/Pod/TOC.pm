@@ -16,14 +16,14 @@ BEGIN {
 	foreach my $directive ( keys %flags ) {
 		no strict 'refs';
 
-		*{"_start_$directive"} = sub { 
-			$_[0]->_set_flag( "_start_$directive" ); 
-			print { $_[0]->output_fh } "\t" x ( $_[0]->_get_flag - 1 ) 
+		*{"_start_$directive"} = sub {
+			$_[0]->_set_flag( "_start_$directive" );
+			print { $_[0]->output_fh } "\t" x ( $_[0]->_get_flag - 1 )
 			};
 
-		*{"_end_$directive"}   = sub { 
-			$_[0]->_set_flag( "_end_$directive" ); 
-			print { $_[0]->output_fh } "\n" 
+		*{"_end_$directive"}   = sub {
+			$_[0]->_set_flag( "_end_$directive" );
+			print { $_[0]->output_fh } "\n"
 			};
 		}
 
