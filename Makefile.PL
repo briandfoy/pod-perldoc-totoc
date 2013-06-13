@@ -1,4 +1,4 @@
-use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker 6.46;
 
 require 5.008;
 
@@ -15,9 +15,16 @@ WriteMakefile(
 	'ABSTRACT'      => 'Turn one or more Pod files into a table of contents',
 
 	'PREREQ_PM'    => {
-		'Test::More'   => '0.95',
-		'Pod::Perldoc' => '0',
-		'Pod::Simple'  => '0',
+		'ExtUtils::MakeMaker' => '6.46',
+		'Test::More'          => '0.95',
+		'Pod::Perldoc'        => '0',
+		'Pod::Simple'         => '0',
+		},
+
+	'META_MERGE' => {
+		resources => {
+			repository => 'https://github.com/briandfoy/pod-perldoc-totoc',
+			},
 		},
 
 	clean  => { FILES    => q|Pod-Perldoc-ToToc-*| },
