@@ -1,4 +1,3 @@
-# $Id$
 
 1.09 - Mon Jul 28 16:06:59 2008
 	* Fixing RT #37979, where a -> sequence in a head element 

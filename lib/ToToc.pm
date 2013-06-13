@@ -1,4 +1,3 @@
- # $Id$
 package Pod::Perldoc::ToToc;
 use strict;
 
