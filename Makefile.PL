@@ -19,6 +19,7 @@ WriteMakefile(
 		'Test::More'          => '0.95',
 		'Pod::Perldoc'        => '0',
 		'Pod::Simple'         => '0',
+		'parent'              => '0',
 		},
 
 	'META_MERGE' => {

@@ -1,10 +1,7 @@
 package Pod::TOC;
 use strict;
 
-use base qw( Pod::Simple );
-
-use subs qw();
-use vars qw( $VERSION );
+use parent qw( Pod::Simple );
 
 use warnings;
 no warnings;
@@ -13,9 +10,9 @@ our $VERSION = '1.10';
 
 BEGIN {
 	my @Head_levels = 0 .. 4;
-	
+
 	my %flags = map { ( "head$_", $_ ) } @Head_levels;
-	
+
 	foreach my $directive ( keys %flags ) {
 		no strict 'refs';
 
@@ -29,7 +26,7 @@ BEGIN {
 			print { $_[0]->output_fh } "\n" 
 			};
 		}
-	
+
 	sub _is_valid_tag { exists $flags{ $_[1] } }
 	sub _get_tag      {        $flags{ $_[1] } }
 	}

@@ -1,10 +1,6 @@
 package Pod::Perldoc::ToToc;
 use strict;
-
-use base qw(Pod::Perldoc::BaseTo);
-
-use subs qw();
-use vars qw( $VERSION );
+use parent qw(Pod::Perldoc::BaseTo);
 
 use Pod::TOC;
 
