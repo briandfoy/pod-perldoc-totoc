@@ -1,13 +1,14 @@
 package Pod::Perldoc::ToToc;
 use strict;
 use parent qw(Pod::Perldoc::BaseTo);
+use vars qw($VERSION);
 
 use Pod::TOC;
 
 use warnings;
 no warnings;
 
-our $VERSION = '1.10';
+$VERSION = '1.11';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }

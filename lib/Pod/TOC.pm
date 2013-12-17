@@ -2,11 +2,12 @@ package Pod::TOC;
 use strict;
 
 use parent qw( Pod::Simple );
+use vars qw( $VERSION );
 
 use warnings;
 no warnings;
 
-our $VERSION = '1.10';
+$VERSION = '1.11';
 
 BEGIN {
 	my @Head_levels = 0 .. 4;
