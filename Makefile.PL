@@ -1,19 +1,20 @@
-use ExtUtils::MakeMaker 6.46;
-
 require 5.008;
+use strict;
+use warnings;
 
-eval "use Test::Manifest 1.21";
 
 # Stupid Mac extended attribute files
 unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
 
-WriteMakefile(
+my $github    = 'https://github.com/briandfoy/';
+my $main_file = 'lib/Pod/Perldoc/ToToc.pm';
+
+my %WriteMakefile = (
 	'NAME'          => 'Pod::Perldoc::ToToc',
-	'VERSION_FROM'  => 'lib/Pod/Perldoc/ToToc.pm',
+	'ABSTRACT_FROM' => $main_file,
+	'VERSION_FROM'  => $main_file,
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
-	'ABSTRACT'      => 'Turn one or more Pod files into a table of contents',
-
 	'PREREQ_PM'    => {
 		'ExtUtils::MakeMaker' => '6.46',
 		'Test::More'          => '0.95',
@@ -30,3 +31,23 @@ WriteMakefile(
 
 	clean  => { FILES    => q|Pod-Perldoc-ToToc-*| },
 	);
+
+sub arguments { \%WriteMakefile }
+
+do_it() unless caller;
+sub do_it {
+	require File::Spec;
+	my $MM ='ExtUtils::MakeMaker';
+	my $MM_version =
+		eval{ "$MM " . $WriteMakefile{'CONFIGURE_REQUIRES'}{'ExtUtils::MakeMaker'} }
+			//
+		"$MM 6.64";
+	eval "use $MM_version";
+	eval "use Test::Manifest 1.21" 
+		if -e File::Spec->catfile( qw(t test_manifest) );
+	WriteMakefile( %WriteMakefile );
+	}
+
+
+no warnings;
+__PACKAGE__;
