@@ -2,30 +2,52 @@ require 5.008;
 use strict;
 use warnings;
 
-
 # Stupid Mac extended attribute files
 unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
 
-my $github    = 'https://github.com/briandfoy/';
-my $main_file = 'lib/Pod/Perldoc/ToToc.pm';
+use File::Spec::Functions qw(catfile);
+
+my $module    = 'Pod::Perldoc::ToToc';
+my $github    = 'https://github.com/briandfoy/pod-perldoc-totoc';
+my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
 my %WriteMakefile = (
-	'NAME'          => 'Pod::Perldoc::ToToc',
+	'NAME'          => $module,
 	'ABSTRACT_FROM' => $main_file,
 	'VERSION_FROM'  => $main_file,
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
-	'PREREQ_PM'    => {
-		'ExtUtils::MakeMaker' => '6.46',
-		'Test::More'          => '0.95',
+
+
+	'CONFIGURE_REQUIRES' => {
+		'ExtUtils::MakeMaker' => '6.64',
+		},
+
+	'BUILD_REQUIRES' => {
+		},
+
+	'TEST_REQUIRES' => {
+		'Test::More' => '0.94',
+		},
+
+	'PREREQ_PM'     => {
 		'Pod::Perldoc'        => '0',
 		'Pod::Simple'         => '0',
 		'parent'              => '0',
 		},
 
 	'META_MERGE' => {
+		'meta-spec' => { version => 2 },
 		resources => {
-			repository => 'https://github.com/briandfoy/pod-perldoc-totoc',
+			repository => {
+				type => 'git',
+				url  => "$github.git",
+				web  => $github,
+				},
+			bugtraker => {
+				web    => "$github/issues",
+				},
+			homepage => $github,
 			},
 		},
 
