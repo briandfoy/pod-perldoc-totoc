@@ -1,4 +1,6 @@
 require 5.008;
+
+package Pod::Perldoc::ToToc;
 use strict;
 use warnings;
 
@@ -7,7 +9,7 @@ unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
 
 use File::Spec::Functions qw(catfile);
 
-my $module    = 'Pod::Perldoc::ToToc';
+my $module    = __PACKAGE__;
 my $github    = 'https://github.com/briandfoy/pod-perldoc-totoc';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
@@ -20,7 +22,8 @@ my %WriteMakefile = (
 
 
 	'CONFIGURE_REQUIRES' => {
-		'ExtUtils::MakeMaker' => '6.64',
+		'ExtUtils::MakeMaker'   => '6.64',
+		'File::Spec::Functions' => '0',
 		},
 
 	'BUILD_REQUIRES' => {
