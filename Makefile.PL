@@ -1,4 +1,6 @@
 require 5.008;
+
+package Pod::Perldoc::ToToc;
 use strict;
 use warnings;
 
@@ -7,7 +9,7 @@ unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
 
 use File::Spec::Functions qw(catfile);
 
-my $module    = 'Pod::Perldoc::ToToc';
+my $module    = __PACKAGE__;
 ( my $dist = $module ) =~ s/::/-/g;
 
 my $github    = 'https://github.com/briandfoy/pod-perldoc-totoc';
