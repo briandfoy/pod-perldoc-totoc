@@ -8,6 +8,8 @@ unlink glob ( map { "$_/._*" } ( '', qw(t lib examples) ) );
 use File::Spec::Functions qw(catfile);
 
 my $module    = 'Pod::Perldoc::ToToc';
+( my $dist = $module ) =~ s/::/-/g;
+
 my $github    = 'https://github.com/briandfoy/pod-perldoc-totoc';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
