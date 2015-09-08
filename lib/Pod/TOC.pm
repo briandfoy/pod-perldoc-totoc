@@ -87,6 +87,8 @@ sub _set_flag {
 	}
 }
 
+=encoding utf8
+
 =head1 NAME
 
 Pod::TOC - Extract a table of contents from a Pod file

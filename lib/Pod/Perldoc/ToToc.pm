@@ -24,6 +24,8 @@ sub parse_from_file {
 	$parser->parse_file( $file );
 	}
 
+=encoding utf8
+
 =head1 NAME
 
 Pod::Perldoc::ToToc - Translate Pod to a Table of Contents
