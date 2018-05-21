@@ -1,5 +1,8 @@
 Revision history for Perl module Pod::Perldoc::ToToc
 
+1.121 2018-05-21T13:34:52Z
+	* Clarify that it's the Artistic License 2.0
+
 1.12 - 2013-12-17
 	* Another MANIFEST fix
 
