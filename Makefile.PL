@@ -68,9 +68,11 @@ my %WriteMakefile = (
 		},
 
 	'PREREQ_PM'     => {
-		'Pod::Perldoc'        => '0',
-		'Pod::Simple'         => '0',
-		'parent'              => '0',
+		'Pod::Perldoc'         => '0',
+		'Pod::Perldoc::BaseTo' => '0',
+		'Pod::Simple'          => '0',
+		'Pod::Toc'             => '0',
+		'parent'               => '0',
 		},
 
 	'META_MERGE' => {
