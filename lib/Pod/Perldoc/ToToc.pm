@@ -8,7 +8,7 @@ use Pod::TOC;
 use warnings;
 no warnings;
 
-$VERSION = '1.12';
+$VERSION = '1.121';
 
 sub is_pageable        { 1 }
 sub write_with_binmode { 0 }
