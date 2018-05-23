@@ -71,7 +71,6 @@ my %WriteMakefile = (
 		'Pod::Perldoc'         => '0',
 		'Pod::Perldoc::BaseTo' => '0',
 		'Pod::Simple'          => '0',
-		'Pod::Toc'             => '0',
 		'parent'               => '0',
 		},
 
