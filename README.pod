@@ -2,8 +2,6 @@
 
 =encoding utf8
 
-=for HTML <a href="https://travis-ci.org/briandfoy/pod-perldoc-totoc"><img src="https://travis-ci.org/briandfoy/pod-perldoc-totoc.svg?branch=master" /></a>
-
 =for HTML <a href='https://ci.appveyor.com/project/briandfoy/pod-perldoc-totoc'><img src='https://ci.appveyor.com/api/projects/status/g5xwcwu81ug4q3nv' /></a>
 
 =for HTML <a href='https://coveralls.io/github/briandfoy/pod-perldoc-totoc?branch=master'><img src='https://coveralls.io/repos/github/briandfoy/pod-perldoc-totoc/badge.svg?branch=master' alt='Coverage Status' /></a>
