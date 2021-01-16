@@ -61,7 +61,6 @@
 iterate-new\.t
 Pod-.*
 \.releaserc
-\.travis\.yml
 \bMANIFEST\s\d
 \bChanges\s\d
 \.icloud$
