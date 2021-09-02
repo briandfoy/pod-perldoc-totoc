@@ -65,4 +65,4 @@ Pod-.*
 \bChanges\s\d
 \.icloud$
 \A\.github\b
-
+\.?appveyor\.ya?ml
