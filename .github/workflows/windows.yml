@@ -1,0 +1,64 @@
+name: windows
+
+on:
+    push:
+        branches-ignore:
+            - 'linux-**'
+            - 'macos-**'
+        tags-ignore:
+            # I tag release pushes but those should have already been tested
+            - 'release-*'
+        paths-ignore:
+            # list all the files which are irrelevant to the tests
+            # non-code, support files, docs, etc
+            - '.appveyor.yml'
+            - '.github/workflows/linux.yml'
+            - '.github/workflows/macos.yml'
+            - '.gitignore'
+            - '.releaserc'
+            - 'Changes'
+            - 'LICENSE'
+            - 'README.pod'
+        pull_request:
+
+jobs:
+    perl:
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os:
+                - windows-2019
+        steps:
+            - uses: actions/checkout@v2
+            - name: Set up Perl
+              run: |
+                choco install strawberryperl
+                echo "C:\strawberry\c\bin"         >> $GITHUB_PATH
+                echo "C:\strawberry\perl\site\bin" >> $GITHUB_PATH
+                echo "C:\strawberry\perl\bin"      >> $GITHUB_PATH
+            - name: Perl version
+              run: perl -V
+            - name: Install dependencies
+              run: cpan -M https://www.cpan.org -T .
+            - name: Run tests
+              run: |
+                perl Makefile.PL
+                make test
+            - name: Run tests in parallel
+              env:
+                HARNESS_OPTIONS: j10
+              run: |
+                perl Makefile.PL
+                make test
+            - name: Run distribution tests
+              run: |
+                perl Makefile.PL
+                make disttest
+            - name: Setup coverage tests
+              run: |
+                cpan -M https://www.cpan.org -T Devel::Cover Devel::Cover::Report::Coveralls
+            - name: Run coverage tests
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                cover -test -report coveralls
